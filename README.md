@@ -1,2 +1,25 @@
-# bolo-likho
-Bolo Likho: free Urdu audio and video to text web app. Runs Whisper in the browser. No server, no API key, no cost. Mobile-first PWA.
+# صدا نویس — مفت اردو آڈیو ٹرانسکرپشن (PWA)
+
+Whisper (MIT) اور Transformers.js (Apache-2.0) آپ کے براؤزر میں چلتے ہیں۔ کوئی سرور، API key یا ادائیگی نہیں۔
+
+## GitHub Pages پر چلانا (موبائل سے)
+1. ZIP کو Files ایپ میں Extract کریں۔
+2. github.com پر مفت اکاؤنٹ بنائیں، New repository، Public، Create۔
+3. Add file ← Upload files ← Extract شدہ سب فائلیں چنیں ← Commit changes۔
+4. Settings ← Pages ← Deploy from a branch ← Branch: main، فولڈر: / (root) ← Save۔
+5. 1 سے 2 منٹ بعد Pages صفحے پر لنک آئے گا (https://آپکانام.github.io/ریپو/)۔ Chrome میں کھولیں اور مینو سے Add to Home screen کریں۔
+
+Settings نظر نہ آئے تو Chrome مینو میں Desktop site آن کریں۔ مفت ہوسٹنگ کی موجودہ حدود میں نے تصدیق نہیں کیں۔
+
+## استعمال
+فائل منتخب کریں یا ریکارڈ کریں ← زبان اور ماڈل چنیں ← ٹرانسکرائب کریں۔ پہلی بار ماڈل ڈاؤن لوڈ ہوتا ہے (انٹرنیٹ لازمی)۔ اردو کے لیے Small عموماً بہتر مگر سست اور بھاری ہے؛ پہلے Base آزمائیں۔ نتیجہ 100 فیصد درست نہیں ہوتا، ایڈیٹر میں درست کریں۔
+- DOCX، TXT، SRT، VTT ڈاؤن لوڈ؛ PDF کے لیے Print کھلتا ہے، "Save as PDF" چنیں۔
+- SRT/VTT اصل ٹرانسکرپشن کے حصوں سے بنتے ہیں، آپ کی ترمیم سے نہیں۔
+- بہت لمبی فائلیں فون کی میموری پر بھاری ہو سکتی ہیں۔
+- ٹرانسکرپشن کے بعد متن کے اوپر انگریزی لائن (ماڈل، رفتار، RAM) آتی ہے۔ اسے لمبا دبا کر کاپی کریں اور Claude کو بھیجیں۔
+
+## رازداری
+لائبریری jsDelivr سے اور ماڈل Hugging Face سے ڈاؤن لوڈ ہوتا ہے، پھر براؤزر کیش۔ ڈیزائن میں آڈیو کسی سرور کو نہیں جاتی؛ یہ Network ٹیب سے ابھی تصدیق شدہ نہیں۔ ٹرانسکرپٹ صرف اسی براؤزر میں آٹو سیو ہوتا ہے؛ "متن حذف کریں" سے مٹ جاتا ہے۔
+
+## ٹیسٹ
+`python3 tests/ui_test.py` (نتیجہ tests/RESULTS.txt)۔ ان میں Whisper نقلی ہے۔
